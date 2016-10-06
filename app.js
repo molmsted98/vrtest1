@@ -83,6 +83,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+app.post('/upload', passportConfig.isAuthenticated, upload.single('myFile'), uploadController.postImage);
 app.use((req, res, next) => {
   if (req.path === '/api/upload') {
     next();
@@ -130,7 +131,6 @@ app.post('/account/password', passportConfig.isAuthenticated, userController.pos
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 app.get('/upload', uploadController.index);
-app.post('/upload', passportConfig.isAuthenticated, upload.single('myFile'), uploadController.postImage);
 app.get('/getPhotos/:userId', passportConfig.isAuthenticated, uploadController.getImages);
 
 /**
