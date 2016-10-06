@@ -33,6 +33,7 @@ const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 const uploadController = require('./controllers/upload');
+const demoController = require('./controllers/demo');
 
 /**
  * API keys and Passport configuration.
@@ -132,6 +133,7 @@ app.post('/account/delete', passportConfig.isAuthenticated, userController.postD
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 app.get('/upload', uploadController.index);
 app.get('/getPhotos/:userId', passportConfig.isAuthenticated, uploadController.getImages);
+app.get('/demo', demoController.index);
 
 /**
  * API examples routes.

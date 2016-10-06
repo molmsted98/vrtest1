@@ -39,18 +39,6 @@ exports.getImages = (req, res, next) => {
 
   Blurb.find({ email: userId }, (err, usersPictures) => {
     if (err) { return next(err); }
-    if (existingUser) {
-      req.flash('errors', { msg: 'Account with that email address already exists.' });
-      return res.redirect('/signup');
-    }
-    user.save((err) => {
-      if (err) { return next(err); }
-      req.logIn(user, (err) => {
-        if (err) {
-          return next(err);
-        }
-        res.redirect('/');
-      });
-    });
+      
   });
 };
