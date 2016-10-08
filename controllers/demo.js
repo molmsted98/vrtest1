@@ -7,3 +7,9 @@ exports.index = (req, res) => {
     title: 'Demo'
   });
 };
+
+exports.index2 = (req, res) => {
+  res.render('demo2', {
+    title: 'Demo2'
+  });
+};

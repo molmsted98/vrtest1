@@ -17,8 +17,15 @@ html
     script(src='/js/lib/aframe.min.js')
 
     a-scene
-      a-sphere(position='0 1.25 -1', radius='1.25', color='#EF2D5E')
-      a-cube(position='-1 0.5 1', rotation='0 45 0', width='1', height='1', depth='1', color='#4CC3D9')
-      a-cylinder(position='1 0.75 1', radius='0.5', height='1.5', color='#FFC65D')
-      a-plane(rotation='-90 0 0', width='4', height='4', color='#7BC8A4')
+      a-assets
+        img(id='texture', src='/images/face.jpg')
+        img(id='text', src='images/images.jpeg')
+        img(id='a1', src='/images/1.jpg')
+        img(id='a2', src='/images/2.jpg')
+        img(id='a3', src='/images/3.jpg')
+        img(id='a4', src='/images/4.jpg')
+        img(id='a5', src='/images/5.jpg')
+        img(id='a6', src='/images/6.jpg')
+      a-image(src='#a1', position='0 1 0', rotation='90 0 0', width='4', height='4')
+      a-image(src='#a2', position='0 3 2', rotation='0 0 0', width='4', height='4')
       a-sky(color='#ECECEC')

@@ -134,6 +134,7 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 app.get('/upload', uploadController.index);
 app.get('/getPhotos/:userId', passportConfig.isAuthenticated, uploadController.getImages);
 app.get('/demo', demoController.index);
+app.get('/demo2', demoController.index2);
 
 /**
  * API examples routes.
